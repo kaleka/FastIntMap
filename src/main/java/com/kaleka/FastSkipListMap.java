@@ -48,12 +48,12 @@ public class FastSkipListMap<T> {
 	}
 
 	public static void testFastSkipListMap() {
+		long start = System.currentTimeMillis();
 		int key=Integer.parseInt(FastDateUtil.parseDateToStringYMD(new Date()),10);
 		FastSkipListMap<Double> d=new FastSkipListMap<Double>(16);
 		for (int i = 0; i < 1000000; i++) {
               d.put(key, 1d);			
 		}
-		long start = System.currentTimeMillis();
 		for (int i = 0; i < 2000000000; i++) {
            d.get(key);			
 		}
