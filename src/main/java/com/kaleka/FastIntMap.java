@@ -34,11 +34,8 @@ public final class FastIntMap<T> {
         }
         data[key] = value;
     }
-    /**是否包含Integer key
-     * @param key integer key
-     * @return 是否
-     */
-    public boolean containsKey(int key) {
+
+      public boolean containsKey(int key) {
         if (key > data.length - 1)
             return false;
         else
