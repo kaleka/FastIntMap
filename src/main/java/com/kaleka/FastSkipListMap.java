@@ -25,7 +25,6 @@ public class FastSkipListMap<T> {
 	public void put(int key, T value) {
 		lock.lock();
 		try {
-			// update object state
 			int dataLength = data.length;
 			if (key > dataLength - 1) {
 				T dataNew[] = null;
@@ -74,8 +73,8 @@ public class FastSkipListMap<T> {
 	}
 	
     public static void main(String[] args) {
-		testSkipListMap();
-		//testFastSkipListMap();
+		//testSkipListMap();
+		testFastSkipListMap();
 		 System.out.println(Runtime.getRuntime().totalMemory());
 		 System.out.println(Runtime.getRuntime().freeMemory());
 		
