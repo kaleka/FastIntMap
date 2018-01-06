@@ -39,7 +39,7 @@ public final class FastDateUtil {
 
 	private final static String fillZero(final int input) {
 		if (input < 10)
-			return new StringBuilder().append('0').append(input).toString();
+			return new StringBuilder(2).append('0').append(input).toString();
 		else
 			return Integer.toString(input);
 	}
@@ -134,7 +134,7 @@ public final class FastDateUtil {
 		try {
 			lock.lock();
 			calendar.setTime(input);
-			StringBuilder stringBuilder = new StringBuilder(19);
+			StringBuilder stringBuilder = new StringBuilder(6);
 			stringBuilder.append(calendar.get(calendar.YEAR));
 			stringBuilder.append(fillZero(calendar.get(calendar.MONTH)+1));
 			stringBuilder.append(fillZero(calendar.get(calendar.DATE)));
